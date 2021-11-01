@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Styles.css">
+    <title>Pokedex</title>
+</head>
+<body>
+    <div id="pokedex">
+        <div id="pokemon">
+            <h2 id="poke-name"></h2>
+            <div id="contenedor-poke-image">
+                <img src="" id="poke-image">
+
+            </div>
+            <p id="poke-types"></p>
+            <p id="poke-ability"></p>
+            <div id="poke-stats">
+                <ul id="hp"></ul>
+                <ul id="attack"></ul>
+                <ul id="defense"></ul>
+                <ul id="special-attack"></ul>
+                <ul id="special-defense"></ul>
+                <ul id="speed"></ul>
+            </div>
+        </div>
+        <div id="search-box" class="search-box">
+            <div id="search-bar" class="search-bar">
+                <input id="search-input" type="text">
+                <button id="search">Search</button>
+            </div>
+            <p id="search-error"></p>
+            <ul id="search-list" class="search-list"></ul>
+        </div>     
+    </div>
+    <script src="pokedex.js"></script>
+</body>
+</html>
