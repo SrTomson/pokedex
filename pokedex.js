@@ -86,26 +86,26 @@ function fillPokedex(id, name, sprite, abilities, stats, types) {
         pokeImage.classList.remove(previousType);
         pokeImage.classList.add(actualType);
     }
-    pokeAbility.textContent = 'Ability:';
+    pokeAbility.innerHTML = '<strong>Ability:</strong>';
     for (let i = 0; i < abilities.length; i++) {
-        pokeAbility.textContent += ` ${abilities[i]}`;
+        pokeAbility.innerHTML += ` ${abilities[i]}`;
     }
     pokeStats.innerHTML = `
-                <p>Base Stats: </p>
-                <ul id="hp">${stats[0].stat.name}: ${stats[0].base_stat}</ul>
-                <ul id="attack">${stats[1].stat.name}: ${stats[1].base_stat}</ul>
-                <ul id="defense">${stats[2].stat.name}: ${stats[2].base_stat}</ul>
-                <ul id="special-attack">${stats[3].stat.name}: ${stats[3].base_stat}</ul>
-                <ul id="special-defense">${stats[4].stat.name}: ${stats[4].base_stat}</ul>
-                <ul id="speed">${stats[5].stat.name}: ${stats[5].base_stat}</ul>`;
+                <p><strong>Base Stats: </strong></p>
+                <ul id="hp"><strong>HP:</strong> ${stats[0].base_stat}</ul>
+                <ul id="attack"><strong>Attack:</strong> ${stats[1].base_stat}</ul>
+                <ul id="defense"><strong>Defense:</strong> ${stats[2].base_stat}</ul>
+                <ul id="special-attack"><strong>Special Attack:</strong> ${stats[3].base_stat}</ul>
+                <ul id="special-defense"><strong>Special Defense:</strong> ${stats[4].base_stat}</ul>
+                <ul id="speed"><strong>Speed:</strong> ${stats[5].base_stat}</ul>`;
     if (types.length == 1) {
         pokeTypes.innerHTML = `
-            <p>Type: ${types[0].type.name}</p>
+            <p><strong>Type:</strong> ${types[0].type.name}</p>
             `;
     }
     else {
         pokeTypes.innerHTML = `
-            <p>Type: ${types[0].type.name} / ${types[1].type.name}</p>
+            <p><strong>Type:</strong> ${types[0].type.name} / ${types[1].type.name}</p>
             `;
     }
 
@@ -144,22 +144,28 @@ function resetPokedex() {
 //Displays search bar results
 function displaySearch(pokes) {
     searchError.innerText = '';
+    let html = '';
     if(pokes != ''){
         let pokesToShow = [];
         if(pokes.length > 20){
+            console.log(pokesToShow)
             for(let i = 0; i < 20; i++){
                 pokesToShow.push(pokes[i])
-            }                        
+            }
+            html = pokesToShow.map((poke) => {
+                return `<p>${poke.name}</p>`
+            })
+            .join(' ');
+            searchList.innerHTML = html;                        
         }
-        // console.log('pokesToShow: ',pokesToShow)
-        let html = pokes.map((poke) => {
-            return `<p>${poke.name}</p>`;
-            // `<ul>
-            //     <button id="poke-btn" class="poke-btn">${poke.name}</button>
-            // </ul>`
-        })
-            .join(' ');        
-        searchList.innerHTML = html;
+        else{
+            html = pokes.map((poke) => {
+                return `<p>${poke.name}</p>`;
+            })
+                .join(' ');        
+            searchList.innerHTML = html;
+
+        }
     }
     else{
         searchList.innerHTML = '';
@@ -169,7 +175,6 @@ function displaySearch(pokes) {
 //EVENTS
 searchBar.addEventListener('keyup', (e) => {
     let searchString = e.target.value.toLowerCase();
-    console.log(searchString);
     let filterPokemon = estado.allPokemon.filter((charcacter) => {
         return charcacter.name.toLowerCase().includes(searchString);
     })
