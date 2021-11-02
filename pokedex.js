@@ -9,7 +9,7 @@ let pokeStats = document.getElementById('poke-stats');
 let searchList = document.getElementById('search-list');
 let searchError = document.getElementById('search-error');
 const searchBar = document.getElementById('search-bar');
-const searchBtn = document.getElementById('search');
+const searchBtn = document.getElementById('search-btn');
 
 const estado = {
     allPokemon: []
@@ -153,14 +153,14 @@ function displaySearch(pokes) {
                 pokesToShow.push(pokes[i])
             }
             html = pokesToShow.map((poke) => {
-                return `<p>${poke.name}</p>`
+                return `<p class="search-item">${poke.name}</p>`
             })
             .join(' ');
             searchList.innerHTML = html;                        
         }
         else{
             html = pokes.map((poke) => {
-                return `<p>${poke.name}</p>`;
+                return `<p class="search-item">${poke.name}</p>`;
             })
                 .join(' ');        
             searchList.innerHTML = html;

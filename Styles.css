@@ -1,127 +1,115 @@
-.pokedex {
-    background-color: rgb(245,15,18);
-    height: 550px;
-    width: 300px;
-    padding-left: 4%;
-    padding-right: 50%;
-    display: flex;
-    /* justify-content:center; */
-}
-.pokemon {
-    /* font-family: 'Courier New', Courier, monospace; */
-    flex: 50%;
-    padding-bottom: 10%;
-    padding-left: 5%;
-    padding-right: 10%;
+.pokedex{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    justify-items: stretch;
+    column-gap: 15px;
+    padding-left: 20%;
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
+    padding-right: 20%;
+    background-color: rgb(255,3,44);
     font-family: Arial, Helvetica, sans-serif;
     font-size: medium;
-    text-align:justify;
 }
-.poke-name{
-    padding-top: 5%;
-    align-content: center;
+.pokemon{
+    grid-column: 1;
+    background-color: black;
+    color: white;
+    padding-left: 5%;
+    padding-right: 5%;
 }
+/* .contenedor-poke-image{
+    justify-content: center;
+    align-items: center;
+} */
 .poke-image{
-    height: 100px;
-    width: 235px;
-    text-align: center;
     display: block;
+    text-align: center;
 }
 .search-box{
-    flex: 50%;
-    height: 550px;
-    width: 300px;
-    padding-left: 10%;
-    padding-right: 10%;
-    align-content: center;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: medium;
-    text-align:justify;
+    padding-top: 5%;
+    grid-column: 2;
+    grid-template-rows: 2;
+    /* justify-content: center; */
+    background-color: rgb(157,157,157);
 }
-
 .search-bar{
-    /* position: absolute; */
-    display:inline-flex;
+    display: block;
     text-align: center;
-    width: 80%;
-    padding-top: 15%;
 }
-
+.search-btn{
+    background-color: rgb(123,169,247);
+    font-weight: bold;
+}
 .search-list{
     display: grid;
-    grid-auto-columns: 50px;
-    /* grid-gap: 10px; */
-    /* background-color: #2196F3; */
-    /* padding: 10px; */
-    /* display: grid;
-    grid-template-columns: repeat(auto-fit); */
-    /* grid-auto-columns: 10px; */
-    /* grid-gap: 1px; */
-    /* position: absolute; */
-    /* display: inline; */
-    /* grid-row: 1/10; */
-    /* position: relative; */
+    padding-left: 5%;
+    padding-right: 5%;
+    grid-template-columns: 40% 40% 40%;
+}
+.search-item{
+    justify-self: start;
 }
 
 
 /*Type Colors*/
 .normal {
-    background-color: rgb(181,170,170);
+    background-color: rgb(168,168,120);
 }
 .fighting{
-    background-color: rgb(172,74,21);
+    background-color: rgb(192,48,40);
 }
 .flying{
-    background-color: rgb(77,100,213);
+    background-color: rgb(168,144,240);
 }
 .poison{
-    background-color: rgb(138,3,210);
+    background-color: rgb(160,64,160);
 }
 .ground{
-    background-color: rgb(224,115,4);
+    background-color: rgb(224,192,104);
 }
 .rock{
-    background-color: rgb(158,117,30);
+    background-color: rgb(184,160,56);
 }
 .bug{
-    background-color: rgb(139,170,38);
+    background-color: rgb(168,184,32);
 }
 .ghost{
-    background-color: rgb(71,38,170);
+    background-color: rgb(112,88,152);
 }
 .steel{
-    background-color: rgb(175,171,185);
+    background-color: rgb(184,184,208);
 }
 .fire{
-    background-color: rgb(228,38,21);
+    background-color: rgb(240,128,48);
 }
 .water{
-    background-color: rgb(21,131,228);
+    background-color: rgb(104,144,240);
 }
 .grass{
-    background-color: rgb(41,221,38);
+    background-color: rgb(120,200,80);
 }
 .electric{
-    background-color: rgb(252,238,32);    
+    background-color: rgb(248,208,48);    
 }
 .psychic{
-    background-color: rgb(247,58,124);
+    background-color: rgb(248,88,136);
 }
 .ice{
-    background-color: rgb(137,227,245);
+    background-color: rgb(152,216,216);
 }
 .dragon{
-    background-color: rgb(117,80,251);
+    background-color: rgb(112,56,248);
 }
 .dark{
-    background-color: rgb(93,60,28);
+    background-color: rgb(112,88,72);
 }
 .fairy{
-    background-color: rgb(240,152,240);
+    background-color: rgb(255,155,225);
 }
 .unknown{
-    background-color: rgb(27,243,174);
+    background-color: rgb(28,156,136);
 }
 .shadow{
-    background-color: rgb(63,0,158);
+    background-color: rgb(97,50,149);
 }
