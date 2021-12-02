@@ -23,14 +23,14 @@ let getAll = function () {
     fetch('https://pokeapi.co/api/v2/pokemon?offset=0&limit=1118')
         .then(response => response.json())
         .then(data => {
-            console.log('data: ', data)
+            // console.log('data: ', data)
 
             // Fills objeto estado
             estado.allPokemon = data.results.map(function (x) {
                 return x;
             })
 
-            console.log('allPokemon: ', estado.allPokemon);
+            // console.log('allPokemon: ', estado.allPokemon);
         })
         .catch(error => {
             console.error(error);
@@ -148,7 +148,7 @@ function displaySearch(pokes) {
     if(pokes != ''){
         let pokesToShow = [];
         if(pokes.length > 20){
-            console.log(pokesToShow)
+            // console.log(pokesToShow)
             for(let i = 0; i < 20; i++){
                 pokesToShow.push(pokes[i])
             }
